@@ -36,7 +36,7 @@ export GOOGLE_PROJECT="seu-project-id"
 - Windows:
 
 ```sh
-set GOOGLE_APPLICATION_CREDENTIALS="c:/path/para/arquivo.json"
+set GOOGLE_PROJECT="seu-project-id"
 ```
 
 ---
@@ -52,10 +52,10 @@ EOF
 ---
 #### RESOLVENDO PROBLEMA DE EXPORT NO WINDOWS
 
-```go
+```sh
 provider "google" {
   project     = "project-id"
-  credentials = file("c:/path/para/arquivo.json")
+  credentials = "c:/path/para/arquivo.json"
 }
 ```
 ---
@@ -128,7 +128,7 @@ Aproveite para fazer seus testes, para todo novo atributo que for criado, faça 
 
 Caso haja qualquer erro, leia atentamente o terminal.
 
-1. Crie um novo arquivo de de provider e inicialize o Provider
+1. Crie um novo arquivo de provider e inicialize o Provider
 
 2. Crie o código para uma nova VPC no *modo auto* (nome sugerido: vpc-lab01). *Valide*, *planeje* e *aplique* as alterações.
 
@@ -170,3 +170,5 @@ sudo apt-get install nginx -y
 
 `
 Obs: lembre-se de ao final destruir sua infraestrutura por questões de billing e manutenção sadia da sua free tier.
+`
+
