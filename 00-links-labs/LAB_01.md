@@ -12,13 +12,31 @@ Referência na apostila: `PÁGINA 39`
 #### EXPORTANDO VARIAVEIS DE AMBIENTE
 
 1. Adicionar caminho absoluto do arquivo.json que contem sua `ServiceAccountKey` obtida na criação da key:
+
+- Linux:
+
 ```sh
 export GOOGLE_APPLICATION_CREDENTIALS="/seu/path/para/arquivo.json"
 ```
 
+- Windows:
+
+```sh
+set GOOGLE_APPLICATION_CREDENTIALS="c:/path/para/arquivo.json"
+```
+
 2. Adicionar `ID do projeto` GCP:
-```shs
+
+- Linux:
+
+```sh
 export GOOGLE_PROJECT="seu-project-id"
+```
+
+- Windows:
+
+```sh
+set GOOGLE_APPLICATION_CREDENTIALS="c:/path/para/arquivo.json"
 ```
 
 ---
@@ -118,8 +136,10 @@ Caso haja qualquer erro, leia atentamente o terminal.
 
 4. Valide na console da GCP a criação dos itens até aqui. 
 
-5. Crie o código para uma nova instância, na rede *default*, em uma das zonas da região do Brasil, com um ip público efêmero. *Valide*, *planeje* e *aplique* as alterações.
+5. Crie o código para uma nova instância, na rede *default*, com um ip público efêmero. *Valide*, *planeje* e *aplique* as alterações.
 - Dados sugeridos:
+  - *name*: vm1
+  - *image*: debian-cloud/debian-11
   - *zone*: southamerica-east1-a
 
 `
@@ -150,5 +170,3 @@ sudo apt-get install nginx -y
 
 `
 Obs: lembre-se de ao final destruir sua infraestrutura por questões de billing e manutenção sadia da sua free tier.
-`
-
