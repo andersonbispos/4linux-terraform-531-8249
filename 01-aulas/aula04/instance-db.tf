@@ -10,7 +10,6 @@ resource "google_compute_instance" "db" {
   }
 
   network_interface {
-    network    = google_compute_network.vpc_network.self_link
     subnetwork = google_compute_subnetwork.subnet1.self_link
 
     access_config {
