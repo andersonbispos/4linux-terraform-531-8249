@@ -9,6 +9,7 @@ terraform {
   /* backend "gcs" {
     bucket = "terraform-8249-state"
     prefix = "prod"
+    credentials = "/Users/anderson/Documents/gcp-svc/lab-terraform-8249-376522-032aed7c4f8b.json"
   } */
 
 }
