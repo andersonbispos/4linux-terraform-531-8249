@@ -1,20 +1,20 @@
 resource "google_compute_instance" "db" {
-  name         = "db"
-  machine_type = "e2-small"
+  name         = var.db_vm_name
+  machine_type = var.default_vm_size
   zone         = local.db_data_zone
+
+  tags = ["db"]
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = var.default_vm_image
     }
   }
 
   network_interface {
     subnetwork = google_compute_subnetwork.subnet1.self_link
 
-    access_config {
-
-    }
+    access_config {}
   }
 
   attached_disk {
