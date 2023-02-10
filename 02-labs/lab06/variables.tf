@@ -14,7 +14,7 @@ variable "subnet_prefix" {
   default = "subnet"
 }
 
-variable "subnet_regions" {
+variable "subnets_region" {
   type        = list(any)
   description = "Regioes padroes a serem criadas as subnets"
   default     = ["us-east1", "southamerica-east1"]
@@ -42,34 +42,32 @@ variable "provison_backend_path" {
   default = "./scripts/prov-back.sh"
 }
 
-
-variable "dbdisk_size" {
-  type    = number
-  default = 50
+variable "front_provision_script" {
+  default     = "./scripts/prov-front.sh"
+  type        = string
+  description = "Caminho para o script de provisionamento"
 }
 
-variable "dbserver_name" {
-  type    = string
-  default = "dbserver1"
+variable "vm_names_us" {
+  type        = list(any)
+  description = "Nome da VMS"
+  default     = ["webback1", "webback2"]
 }
 
-variable "web1name" {
-  type    = string
-  default = "web1"
+variable "vm_zones_us" {
+  type        = list(any)
+  description = "Zonas da VMS"
+  default     = ["us-east1-b", "us-east1-c"]
 }
 
-variable "web1zone" {
-  type    = string
-  default = "us-east1-c"
+variable "vm_names_br" {
+  type        = list(any)
+  description = "Nome da VMS"
+  default     = ["webback3", "webback4"]
 }
 
-variable "web2name" {
-  type    = string
-  default = "web2"
+variable "vm_zones_br" {
+  type        = list(any)
+  description = "Zonas da VMS"
+  default     = ["southamerica-east1-a", "southamerica-east1-b"]
 }
-
-variable "web2zone" {
-  type    = string
-  default = "southamerica-east1-c"
-}
-
