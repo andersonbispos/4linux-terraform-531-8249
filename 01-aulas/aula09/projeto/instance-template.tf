@@ -9,16 +9,16 @@ resource "google_compute_instance_template" "default" {
 
   // Create a new boot disk from an image
   disk {
-    source_image      = var.default_vm_image
-    auto_delete       = true
-    boot              = true
+    source_image = var.default_vm_image
+    auto_delete  = true
+    boot         = true
   }
 
   network_interface {
     network = google_compute_network.vpc_network.self_link
 
     access_config {
-      
+
     }
   }
 
