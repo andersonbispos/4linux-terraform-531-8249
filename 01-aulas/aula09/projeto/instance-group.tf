@@ -8,7 +8,7 @@ resource "google_compute_region_instance_group_manager" "appserver-us-central" {
     instance_template = google_compute_instance_template.default.id
   }
 
-  target_size = 2
+  target_size = 4
 }
 
 resource "google_compute_region_instance_group_manager" "appserver-br" {
