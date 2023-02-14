@@ -1,8 +1,10 @@
-resource "google_compute_instance" "web1" {
+resource "google_compute_instance" "db1" {
 
-  name = format("%s-%s", "web1", terraform.workspace)
-  //name         = "web1"
-  machine_type = "e2-small"
+  count = terraform.workspace == "prod" ? 0 : 0
+
+  name = format("%s-%s", "db1", terraform.workspace)
+
+  machine_type = var.vm_type[terraform.workspace]
   zone         = "us-central1-a"
 
   boot_disk {
